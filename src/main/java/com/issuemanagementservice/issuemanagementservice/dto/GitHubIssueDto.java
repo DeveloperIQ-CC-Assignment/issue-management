@@ -24,9 +24,6 @@ public class GitHubIssueDto {
     @JsonProperty("author_association")
     private String author_association;
 
-    @JsonProperty("issue_url")
-    private String issue_url;
-
     @JsonProperty("user")
     private UserDto userDto;
 

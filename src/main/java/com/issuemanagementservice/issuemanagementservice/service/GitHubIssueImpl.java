@@ -49,6 +49,7 @@ public class GitHubIssueImpl implements GitHubIssueService {
                 .state(gitHubIssueDto.getState())
                 .author_association(gitHubIssueDto.getAuthor_association())
                 .user(User.builder().login(gitHubIssueDto.getUserDto().getLogin()).build())
+                .issue_url((gitHubIssueDto.getIssue_url()))
                 .build();
     }
 }

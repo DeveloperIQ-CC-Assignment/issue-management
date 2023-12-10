@@ -29,5 +29,7 @@ public class GitHubIssue {
 
     private User user;
 
+    private String issue_url;
+
 }
 

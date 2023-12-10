@@ -27,6 +27,7 @@ public class GitHubIssueDto {
     @JsonProperty("user")
     private UserDto userDto;
 
-}
+    @JsonProperty("issue_url")
+    private String issue_url;
 
-//end
+}

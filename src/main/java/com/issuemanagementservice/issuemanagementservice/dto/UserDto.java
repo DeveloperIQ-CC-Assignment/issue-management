@@ -13,6 +13,4 @@ import org.springframework.data.annotation.Id;
 public class UserDto {
     @Id
     private String login;
-
-
 }

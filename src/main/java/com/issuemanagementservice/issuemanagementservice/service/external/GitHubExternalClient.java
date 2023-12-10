@@ -1,7 +1,6 @@
 package com.issuemanagementservice.issuemanagementservice.service.external;
 
 import com.issuemanagementservice.issuemanagementservice.dto.GitHubIssueDto;
-import com.issuemanagementservice.issuemanagementservice.model.GitHubIssue;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
@@ -20,7 +19,9 @@ public class GitHubExternalClient {
     @Value("${github.issue-detail-url}")
     private String gitHubIssueDetailsUrl;
 
-    public GitHubExternalClient(RestTemplate restTemplate) {this.restTemplate = restTemplate;}
+    public GitHubExternalClient(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     public List<GitHubIssueDto> getIssueDetails() {
         ResponseEntity<List<GitHubIssueDto>> response = restTemplate.exchange(gitHubIssueDetailsUrl, HttpMethod.GET, null, new ParameterizedTypeReference<>() {

@@ -13,9 +13,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @Document(collection = "github_issues")
 public class GitHubIssue {
-    @Id
 
-    private String node_id;
+    @Id
+    private String id;
+
+    private String nodeId;
 
     private int number;
 

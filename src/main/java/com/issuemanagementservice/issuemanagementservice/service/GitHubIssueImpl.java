@@ -40,6 +40,7 @@ public class GitHubIssueImpl implements GitHubIssueService {
         return this.gitHubIssueRepository.findAll();
     }
 
+//    end
     private GitHubIssue generateGitHubIssueObject(GitHubIssueDto gitHubIssueDto) {
         return GitHubIssue.builder()
                 .nodeId(gitHubIssueDto.getNode_id())

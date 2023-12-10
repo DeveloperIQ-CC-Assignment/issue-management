@@ -3,10 +3,11 @@ package com.issuemanagementservice.issuemanagementservice.service;
 import com.issuemanagementservice.issuemanagementservice.dto.GitHubIssueDto;
 import com.issuemanagementservice.issuemanagementservice.model.GitHubIssue;
 import com.issuemanagementservice.issuemanagementservice.repository.GitHubIssueRepository;
+import com.issuemanagementservice.issuemanagementservice.service.GitHubIssueService;
 import com.issuemanagementservice.issuemanagementservice.service.external.GitHubExternalClient;
 import lombok.AllArgsConstructor;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.stereotype.Service;
+import org.springframework.data.mongodb.core.MongoOperations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,19 +15,21 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class GitHubIssueImpl implements GitHubIssueService {
+
     private final GitHubExternalClient githubExternalClient;
     private final GitHubIssueRepository gitHubIssueRepository;
-
+//    private final MongoOperations mongoOperations;
 
     @Override
     public List<GitHubIssue> getGitHubIssues() {
+
         List<GitHubIssue> gitHubIssues = new ArrayList<>();
 
         List<GitHubIssueDto> gitHubIssueDtoList = this.githubExternalClient.getIssueDetails();
 
-        gitHubIssueDtoList.forEach(gitHubIssueDto -> {
-            GitHubIssue gitHubIssue = this.generateGitHubIssueObject(gitHubIssueDto);
-            gitHubIssues.add(gitHubIssue);
+        gitHubIssueDtoList.forEach(gitHubRequestDto -> {
+            GitHubIssue gitHubRequest = this.generateGitHubIssueObject(gitHubRequestDto);
+            gitHubIssues.add(gitHubRequest);
         });
 
         this.gitHubIssueRepository.saveAll(gitHubIssues);
@@ -41,7 +44,6 @@ public class GitHubIssueImpl implements GitHubIssueService {
 
     private GitHubIssue generateGitHubIssueObject(GitHubIssueDto gitHubIssueDto) {
         return GitHubIssue.builder()
-//                .id(gitHubIssueDto.getId())
                 .node_id(gitHubIssueDto.getNode_id())
                 .number(gitHubIssueDto.getNumber())
                 .title(gitHubIssueDto.getTitle())

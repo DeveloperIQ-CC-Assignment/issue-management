@@ -25,8 +25,5 @@ public class GitHubIssueDto {
     @JsonProperty("author_association")
     private String author_association;
 
-    @JsonProperty("id")
-    private int id;
-
 
 }

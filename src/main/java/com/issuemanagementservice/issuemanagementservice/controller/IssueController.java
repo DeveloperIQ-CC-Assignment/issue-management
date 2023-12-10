@@ -14,16 +14,16 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/git-hub")
 public class IssueController {
-
     private GitHubIssueService gitHubIssueService;
 
     @GetMapping("/issues")
-    public ResponseEntity<List<GitHubIssue>> getGitHubIssues() {
+    public ResponseEntity<List<GitHubIssue>> getGitHubRequests() {
         return ResponseEntity.ok(this.gitHubIssueService.getGitHubIssues());
     }
 
     @GetMapping("/issues/get-all")
-    public ResponseEntity<List<GitHubIssue>> getAllIssues() {
+    public ResponseEntity<List<GitHubIssue>> getAllRequests() {
         return ResponseEntity.ok(this.gitHubIssueService.getAllIssues());
     }
+
 }

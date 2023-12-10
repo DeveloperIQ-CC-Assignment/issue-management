@@ -15,7 +15,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class GitHubIssue {
     @Id
 
-
     private String node_id;
 
     private int number;

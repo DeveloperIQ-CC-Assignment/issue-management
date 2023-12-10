@@ -25,11 +25,6 @@ public class GitHubExternalClient {
     }
 
 
-    public List<GitHubIssueDto> getUserDetails() {
-        ResponseEntity<List<GitHubIssueDto>> response = restTemplate.exchange(gitHubIssueDetailsUrl, HttpMethod.GET, null, new ParameterizedTypeReference<>() {
-        });
-        return response.getBody();
-    }
 
     public List<GitHubIssueDto> getIssueDetails() {
         ResponseEntity<List<GitHubIssueDto>> response = restTemplate.exchange(gitHubIssueDetailsUrl, HttpMethod.GET, null, new ParameterizedTypeReference<>() {

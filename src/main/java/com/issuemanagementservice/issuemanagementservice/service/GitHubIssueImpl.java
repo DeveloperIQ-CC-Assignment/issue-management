@@ -5,6 +5,7 @@ import com.issuemanagementservice.issuemanagementservice.model.GitHubIssue;
 import com.issuemanagementservice.issuemanagementservice.repository.GitHubIssueRepository;
 import com.issuemanagementservice.issuemanagementservice.service.external.GitHubExternalClient;
 import lombok.AllArgsConstructor;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -40,7 +41,7 @@ public class GitHubIssueImpl implements GitHubIssueService {
 
     private GitHubIssue generateGitHubIssueObject(GitHubIssueDto gitHubIssueDto) {
         return GitHubIssue.builder()
-                .id(gitHubIssueDto.getId())
+//                .id(gitHubIssueDto.getId())
                 .node_id(gitHubIssueDto.getNode_id())
                 .number(gitHubIssueDto.getNumber())
                 .title(gitHubIssueDto.getTitle())

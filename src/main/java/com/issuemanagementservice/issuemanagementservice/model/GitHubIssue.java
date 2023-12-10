@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "github_issues")
 public class GitHubIssue {
     @Id
-    private int id;
+
 
     private String node_id;
 

@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GitHubIssueDto {
-    @JsonProperty("id")
-    private int id;
 
     @JsonProperty("node_id")
     private String node_id;
@@ -26,6 +24,9 @@ public class GitHubIssueDto {
 
     @JsonProperty("author_association")
     private String author_association;
+
+    @JsonProperty("id")
+    private int id;
 
 
 }

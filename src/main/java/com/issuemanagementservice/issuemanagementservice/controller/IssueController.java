@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/git-hub")
 public class IssueController {
+
     private GitHubIssueService gitHubIssueService;
 
     @GetMapping("/issues")
@@ -22,7 +23,7 @@ public class IssueController {
     }
 
     @GetMapping("/issues/get-all")
-    public ResponseEntity<List<GitHubIssue>> getAllCommits() {
+    public ResponseEntity<List<GitHubIssue>> getAllIssues() {
         return ResponseEntity.ok(this.gitHubIssueService.getAllIssues());
     }
 }

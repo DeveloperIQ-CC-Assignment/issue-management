@@ -20,11 +20,7 @@ public class GitHubExternalClient {
     @Value("${github.issue-detail-url}")
     private String gitHubIssueDetailsUrl;
 
-    public GitHubExternalClient(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
-
-
+    public GitHubExternalClient(RestTemplate restTemplate) {this.restTemplate = restTemplate;}
 
     public List<GitHubIssueDto> getIssueDetails() {
         ResponseEntity<List<GitHubIssueDto>> response = restTemplate.exchange(gitHubIssueDetailsUrl, HttpMethod.GET, null, new ParameterizedTypeReference<>() {

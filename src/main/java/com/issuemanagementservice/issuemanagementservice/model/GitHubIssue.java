@@ -27,9 +27,9 @@ public class GitHubIssue {
 
     private String author_association;
 
-    private User user;
+    private String issueUrl;
 
-    private String issue_url;
+    private User user;
 
 }
 

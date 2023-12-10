@@ -2,6 +2,7 @@ package com.issuemanagementservice.issuemanagementservice.service;
 
 import com.issuemanagementservice.issuemanagementservice.dto.GitHubIssueDto;
 import com.issuemanagementservice.issuemanagementservice.model.GitHubIssue;
+import com.issuemanagementservice.issuemanagementservice.model.User;
 import com.issuemanagementservice.issuemanagementservice.repository.GitHubIssueRepository;
 import com.issuemanagementservice.issuemanagementservice.service.external.GitHubExternalClient;
 import lombok.AllArgsConstructor;
@@ -46,6 +47,7 @@ public class GitHubIssueImpl implements GitHubIssueService {
                 .title(gitHubIssueDto.getTitle())
                 .state(gitHubIssueDto.getState())
                 .author_association(gitHubIssueDto.getAuthor_association())
+                .user(User.builder().login(gitHubIssueDto.getUserDto().getLogin()).build())
                 .build();
     }
 }

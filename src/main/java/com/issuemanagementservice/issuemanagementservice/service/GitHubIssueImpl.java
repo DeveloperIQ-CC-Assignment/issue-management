@@ -18,7 +18,6 @@ public class GitHubIssueImpl implements GitHubIssueService {
 
     private final GitHubExternalClient githubExternalClient;
     private final GitHubIssueRepository gitHubIssueRepository;
-//    private final MongoOperations mongoOperations;
 
     @Override
     public List<GitHubIssue> getGitHubIssues() {

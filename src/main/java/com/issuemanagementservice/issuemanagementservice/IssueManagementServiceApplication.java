@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfigurat
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 
 @SpringBootApplication
-
 public class IssueManagementServiceApplication {
 
 	public static void main(String[] args) {

@@ -17,12 +17,12 @@ public class IssueController {
     private GitHubIssueService gitHubIssueService;
 
     @GetMapping("/issues")
-    public ResponseEntity<List<GitHubIssue>> getGitHubRequests() {
+    public ResponseEntity<List<GitHubIssue>> getGitHubIssues() {
         return ResponseEntity.ok(this.gitHubIssueService.getGitHubIssues());
     }
 
     @GetMapping("/issues/get-all")
-    public ResponseEntity<List<GitHubIssue>> getAllRequests() {
+    public ResponseEntity<List<GitHubIssue>> getAllIssues() {
         return ResponseEntity.ok(this.gitHubIssueService.getAllIssues());
     }
 
